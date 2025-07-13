@@ -1,0 +1,134 @@
+.App {
+  text-align: center;
+  background-color: #0a0a0a;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00aaff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0088cc;
+}
+
+/* Hover effects and transitions */
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Card 3D perspective effects */
+.card-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card-3d-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover .card-3d-inner {
+  transform: rotateY(0deg) rotateX(0deg);
+}
+
+.card-3d-resting {
+  transform: rotateY(-15deg) rotateX(5deg);
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #00aaff }
+}
+
+.typing-animation {
+  width: 0;
+  animation: typing 3.5s steps(40, end), blink .75s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #00aaff;
+}
+
+/* Glitch effect for preloader */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #00aaff, -0.05em -0.025em 0 #ff00aa, 0.025em 0.05em 0 #aaff00;
+  }
+  15% {
+    text-shadow: 0.05em 0 0 #00aaff, -0.05em -0.025em 0 #ff00aa, 0.025em 0.05em 0 #aaff00;
+  }
+  16% {
+    text-shadow: -0.05em -0.025em 0 #00aaff, 0.025em 0.025em 0 #ff00aa, -0.05em -0.05em 0 #aaff00;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #00aaff, 0.025em 0.025em 0 #ff00aa, -0.05em -0.05em 0 #aaff00;
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 #00aaff, 0.05em 0 0 #ff00aa, 0 -0.05em 0 #aaff00;
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 #00aaff, 0.05em 0 0 #ff00aa, 0 -0.05em 0 #aaff00;
+  }
+  100% {
+    text-shadow: -0.025em 0 0 #00aaff, -0.025em -0.025em 0 #ff00aa, -0.025em -0.05em 0 #aaff00;
+  }
+}
+
+.glitch {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Parallax scrolling effect */
+.parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Blueprint wireframe effect */
+.blueprint {
+  filter: 
+    invert(1) 
+    sepia(1) 
+    saturate(5) 
+    hue-rotate(180deg) 
+    brightness(0.8) 
+    contrast(1.2);
+  mix-blend-mode: screen;
+}
+
+/* Smooth fade transitions */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.fade-in-delayed {
+  animation: fadeIn 0.6s ease-in-out 0.3s both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
